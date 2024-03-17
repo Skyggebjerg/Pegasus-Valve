@@ -46,7 +46,7 @@ void loop()
 
       ss.powerEnable(true);
       ss.setSpeed(300); // 60 = 60 revolutions per minute (rpm) = 1 rev per sec
-      ss.step(100); //turn valve 180 degrees (to outlet)
+      ss.step(100,50,50); //turn valve 180 degrees (to outlet)
       delay(100);
       digitalWrite(32, HIGH); // Tell Pump that Valve is changed to outlet
       ss.powerEnable(false); // release torque on stepmotor      
@@ -56,7 +56,7 @@ void loop()
 } 
       ss.powerEnable(true);
       ss.setSpeed(300);      
-      ss.step(-100); //turn valve back to inlet
+      ss.step(-100,50,50); //turn valve back to inlet
      delay(100);
            digitalWrite(32, LOW); // Tell Pump that Valve is back to inlet
       ss.powerEnable(false);
